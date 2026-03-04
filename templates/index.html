@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Store - Download</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; text-align: center; }
+        .container { max-width: 500px; margin: auto; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .btn { display: block; background: #075e54; color: white; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px; }
+        .file-info { color: #555; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>App Releases</h1>
+        <p>Tap to install the latest build</p>
+        {% for file in files %}
+        <div class="card">
+            <strong>{{ file }}</strong>
+            <a href="/download/{{ file }}" class="btn">Download & Install</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

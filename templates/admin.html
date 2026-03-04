@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Upload</title>
+    <style>
+        body { font-family: sans-serif; padding: 30px; }
+        .upload-section { border: 2px dashed #ccc; padding: 20px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Upload New Build (.apk / .aab)</h1>
+    <div class="upload-section">
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".apk,.aab">
+            <button type="submit">Upload to Store</button>
+        </form>
+    </div>
+
+    <h3>Manage Files</h3>
+    <ul>
+        {% for file in files %}
+        <li>
+            {{ file }} 
+            <a href="/delete/{{ file }}" style="color:red; margin-left: 10px;">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">View Public Store</a></p>
+</body>
+</html>
