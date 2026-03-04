@@ -1,1 +1,3 @@
-flask\ngunicorn\nwerkzeug
+flask
+ngunicorn
+nwerkzeug
